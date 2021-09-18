@@ -16,7 +16,6 @@ export class InterceptorHeader implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     // modify request
     request = request.clone({
-    //   withCredentials: true,
       setHeaders: {
         'Accept': `application/json`,
       }

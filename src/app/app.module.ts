@@ -24,8 +24,12 @@ import { HeaderComponent } from '@shared/header/header.component';
 import { ListComponent } from './components/list/list.component';
 import { CrudComponent } from './components/crud/crud.component';
 
-// import {DataViewModule} from 'primeng/dataview';
+// primeng
+import {DataViewModule} from 'primeng/dataview';
 import {ButtonModule} from 'primeng/button';
+import {TableModule} from 'primeng/table';
+import {InputTextModule} from 'primeng/inputtext';
+
 
 @NgModule({
   declarations: [
@@ -43,7 +47,9 @@ import {ButtonModule} from 'primeng/button';
     FormsModule,
     ReactiveFormsModule,
     ButtonModule,
-    // DataViewModule,
+    DataViewModule,
+    TableModule,
+    InputTextModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [

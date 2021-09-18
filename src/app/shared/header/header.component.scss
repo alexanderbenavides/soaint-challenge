@@ -1,3 +1,14 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  ul {
+    list-style-type: none;
+    display: flex;
+    li {
+      margin-right: 1rem;
+    }
+  }
+}
 .header-fixed {
   width: 100%;
   top: 0;

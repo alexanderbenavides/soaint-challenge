@@ -1,16 +1,23 @@
-<form>
-    <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label">Email address</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+<form  [formGroup]="formGroup">
+  <div class="container-form">
+    <div *ngIf="isEdit">
+      Editar
     </div>
-    <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1">
+    <div *ngIf="!isEdit">
+      Agregar
     </div>
-    <div class="mb-3 form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    <div>
+      <input type="text" pInputText  formControlName="_about" [class.ng-dirty]="isFormInvalid('_about')" placeholder="Acerca de">
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <div>
+      <input type="link" pInputText formControlName="accessURL" [class.ng-dirty]="isFormInvalid('accessURL')" placeholder="accessURL">
+    </div>
+    <div>
+      <input type="link" pInputText formControlName="title" [class.ng-dirty]="isFormInvalid('title')" placeholder="Título">
+    </div>
+    <div>
+      <p-button *ngIf="!isEdit" label="Agregar" (click)="onSubmitForm()"></p-button>
+      <p-button *ngIf="isEdit" label="Editar" (click)="onSubmitForm()"></p-button>
+    </div>
+  </div>
   </form>
