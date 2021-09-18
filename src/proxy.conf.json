@@ -1,0 +1,11 @@
+{
+    "/soapui/api/v1/*": {
+      "target": "http://localhost:9016/api/v1",
+      "secure": false,
+      "pathRewrite": {
+        "^/soapui/api/v1": ""
+      },
+      "changeOrigin": true,
+      "logLevel": "debug"
+    }
+}
